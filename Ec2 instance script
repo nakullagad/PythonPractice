@@ -1,0 +1,14 @@
+#Listing all instances using script-
+--aws configure --profile "aws_root"
+--#give aws access key and secret access key
+
+
+import boto3
+session= boto3.resource(profile_name="aws_root")
+resource_object= session.resource("Ec2")
+client_object= session.client("Ec2")
+
+for each_inst in resource_object.instance.all():
+            print(each_inst.id, each_inst.state)
+for each_inst in client_object.describe_instances():
+            print(each_inst)
