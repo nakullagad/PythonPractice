@@ -1,0 +1,25 @@
+#Find files in dir with ext .py/.sh/.txt
+
+import os
+
+req_path= input("Enter dir path:")
+if os.path.isfile(req_path):
+      print(f"The given path {req_path} is a file, please enter directory path.")
+      
+else:
+      all_files_in_dir= os.listdir(req_path)
+      
+      if len(all_files_in_dir)==0:
+            print(f"The given dir path is empty.")
+            
+      else:
+            req_ext= input("Enter req file extension like .py/.sh/.txt")
+            req_files=[]
+            for each_file in all_files_in_dir:
+                  if each_file.endswith(req_ext):
+                        req_files.append(each_file)
+            if len(req_files)== 0
+                  print(f"There are no files in {req_path} of extension {req_ext}")
+            else:
+                  print(f"There are len(req_files) files in location of {req_path} with extension {req_ext}")
+                  print(f"The required files are: {req_files}")
