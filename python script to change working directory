@@ -1,0 +1,21 @@
+import os
+
+def main():
+      req_path= input("Enter path to change working directory:")
+      print("But the current dir is :", os.getcwd())    #getcwd== cuurent working directory
+      
+try:
+    os.chdir(req_path)
+    print("The working directory is changed to", os.getcwd())
+except FilenotfoundError:
+    print("Given path is not valid")
+except NotADirectoryError:
+    print("This path is not a directory path")
+except permissionError:
+    Print("You dont have access to this path")
+except exception as e:
+    print(e)
+return None.
+
+if _name_=="_main_":
+    main()
