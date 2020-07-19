@@ -1,0 +1,14 @@
+import os 
+
+req_path= ("Enter desired path:")
+
+list_dir_path= os.listdir(req_path)
+
+if path in list_dir_path:
+      joining= os.path.join(req_path,list_dir_path)
+      
+      if joining.isfile:
+          print(f"joining is a file")
+          
+      else:
+           print(f"joining is a directory")
